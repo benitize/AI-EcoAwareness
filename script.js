@@ -1,15 +1,21 @@
 function estimateImpact(promptText) {
-  const tokenCount = Math.ceil(promptText.length / 4); // Rough estimate
-  const energyPerTokenWh = 0.0005;
-  const waterPerKWh = 1.8;
-  const co2PerKWh = 400;
+  const tokenCount = Math.ceil(promptText.length / 4); // ~4 chars per token
 
-  const energyUsed = tokenCount * energyPerTokenWh;
-  const waterUsed = (energyUsed / 1000) * waterPerKWh;
-  const co2Emitted = (energyUsed / 1000) * co2PerKWh;
+  const energyPerTokenWh = 0.0005; // 0.5 mWh = 0.0005 Wh
+  const energyUsedWh = tokenCount * energyPerTokenWh;
 
-  return { energyUsed, waterUsed, co2Emitted, tokenCount };
+  const energyUsedkWh = energyUsedWh / 1000; // Convert to kWh
+  const waterUsedLiters = energyUsedkWh * 1.8;
+  const co2EmittedGrams = energyUsedkWh * 400;
+
+  return {
+    tokenCount,
+    energyUsedWh: energyUsedWh * 1000, // Convert to milliWh for display
+    waterUsedLiters,
+    co2EmittedGrams
+  };
 }
+
 
 function handlePrompt() {
   const promptText = document.getElementById("promptInput").value;
