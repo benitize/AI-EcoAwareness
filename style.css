@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f9f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: #ffffff10;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow:
+    0 0 20px rgba(76, 175, 80, 0.6),
+    0 0 40px rgba(76, 175, 80, 0.4),
+    0 0 60px rgba(76, 175, 80, 0.2);
+  width: 400px;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #388e3c;
+}
+
+.eco-card {
+  margin-top: 20px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  padding: 15px;
+  border-radius: 8px;
+  color: #1b5e20;
+  font-size: 14px;
+  display: none;
+}
+
+.toggle-wrapper {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+input:checked + .slider:before {
+  transform: translateX(20px);
+}

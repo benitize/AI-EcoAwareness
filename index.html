@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Eco Awareness</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌱 AI Eco Awareness</h1>
+    <textarea id="promptInput" rows="5" placeholder="Type your AI prompt here..."></textarea>
+
+    <div class="toggle-wrapper">
+      <label class="switch">
+        <input type="checkbox" id="ecoToggle" checked />
+        <span class="slider round"></span>
+      </label>
+      <span>Eco-Awareness Mode</span>
+    </div>
+
+    <button onclick="handlePrompt()">Check Impact</button>
+
+    <div id="ecoStats" class="eco-card"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
